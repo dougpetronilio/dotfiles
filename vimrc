@@ -127,6 +127,9 @@ let g:syntastic_check_on_wq = 0
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 
+" Autocomplete with dictionary words when spell check is on
+set complete+=kspell
+
 " Always use vertical diffs
 set diffopt+=vertical
 
