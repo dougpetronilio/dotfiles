@@ -15,6 +15,7 @@ Plugin 'JSON.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'rizzatti/dash.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'taglist.vim'
 
 Plugin 'Shougo/vimproc'
 Plugin 'Shougo/unite.vim'

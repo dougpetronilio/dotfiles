@@ -1,47 +1,22 @@
 " Leader
 let mapleader = ","
 
-set backspace=2   " Backspace deletes like most programs in insert mode
+set backspace=2         " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile          " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
-
-" presentation settings
-set number              " precede each line with its line number
-set numberwidth=3       " number of culumns for line numbers
-set textwidth=0         " Do not wrap words (insert)
-set nowrap              " Do not wrap words (view)
-set showcmd             " Show (partial) command in status line.
-set showmatch           " Show matching brackets.
-set ruler               " line and column number of the cursor position
-set wildmenu            " enhanced command completion
-set visualbell          " use visual bell instead of beeping
-set laststatus=2        " always show the status line
-set listchars=tab:▷⋅,trail:·
-set list
-set incsearch           " Incremental search
-set hlsearch            " Highlight search match
-set ignorecase          " Do case insensitive matching
-set smartcase           " do not ignore if search pattern has CAPS
-
+set ruler               " show the cursor position all the time
+set showcmd             " display incomplete commands
+set incsearch           " do incremental searching
+set laststatus=2        " Always display the status line
+set autowrite           " Automatically :write before running commands
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
-
-" mouse settings
-if has("mouse")
-  set mouse=a
-endif
-set mousehide     " Hide mouse pointer on insert mode."
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
@@ -87,33 +62,19 @@ set expandtab
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
-" CtrlP Configurations
-let g:ctrlp_map = '<leader>,'
-let g:ctrlp_cmd = 'CtrlP'
+set tags=./tags;
+set grepprg=ack
 
-nmap <leader>. :CtrlPClearCache<cr>:CtrlP<cr>
-nmap <leader>l :CtrlPLine<cr>
-nmap <leader>b :CtrlPBuff<cr>
-nmap <leader>m :CtrlPBufTag<cr>
-nmap <leader>M :CtrlPBufTagAll<cr>
+let g:fuzzy_ignore = "*.png;*.PNG;*.jpg;*.JPG;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 
-let g:ctrlp_clear_cache_on_exit = 1
+" Search for the word under the cursor
+" Normal mode: K
+nmap K :Gsearch "\b<C-R><C-W>\b"<CR>
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+" Resize and Zoom
+autocmd VimResized * :wincmd =
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
 
 " Numbers
 set number
@@ -175,51 +136,11 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 " Always use vertical diffs
 set diffopt+=vertical
 
-" syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
-let g:syntastic_check_on_wq=0
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-
-" nerdtree
-" Ctrl-P to Display the file browser tree
-nmap <C-P> :NERDTreeTabsToggle<CR>
-" ,p to show current file in the tree
-nmap <leader>p :NERDTreeFind<CR>
-
-" nerdcommenter
-" ,/ to invert comment on the current line/selection
-nmap <leader>/ :call NERDComment(0, "invert")<cr>
-vmap <leader>/ :call NERDComment(0, "invert")<cr>
-
-" ,t to show tags window
-let Tlist_Show_Menu=1
-nmap <leader>t :TlistToggle<CR>
-
-" Fugitive
-" ,g for Ggrep
-nmap <leader>g :silent Ggrep<space>
-
-" ,f for global git serach for word under the cursor (with highlight)
-nmap <leader>f :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:cw<CR><CR>
-
-" same in visual mode
-:vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
-
-" Switch
-" making some of the switches defined for ruby work in HAML files
-autocmd FileType haml let b:switch_definitions =
-      \ [
-      \   g:switch_builtins.ruby_hash_style,
-      \   g:switch_builtins.ruby_string,
-      \   g:switch_builtins.true_false,
-      \   g:switch_builtins.true_false,
-      \ ]
-
-let g:blockle_mapping = '<Leader>B'
-
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+set background=dark
+syntax enable
+colorscheme Tomorrow-Night
