@@ -1,3 +1,71 @@
+" === Binding ===
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+"make Y consistent with C and D
+nnoremap Y y$
+
+" toggle highlight trailing whitespace
+nmap <silent> <leader>s :set nolist!<CR>
+
+" Ctrl-N to disable search match highlight
+nmap <silent> <C-N> :silent noh<CR>
+
+" Ctrol-E to switch between 2 last buffers
+nmap <C-E> :b#<CR>
+
+" ,e to fast finding files. just type beginning of a name and hit TAB
+nmap <leader>e :e **/
+
+" ,n to get the next location (compilation errors, grep etc)
+nmap <leader>n :cn<CR>
+nmap <leader>N :cp<CR>
+
+" driving me insane this thing
+command Q q
+command Qa qa
+command QA qa
+command -nargs=* -complete=file W w <args>
+command -nargs=* -complete=file E e <args>
+
+" center display after searching
+nnoremap n   nzz
+nnoremap N   Nzz
+nnoremap *   *zz
+nnoremap #   #zz
+nnoremap g*  g*zz
+nnoremap g#  g#z
+
+""""""""""" awesome stuff from vimbits.com
+
+" keep selection after in/outdent
+vnoremap < <gv
+vnoremap > >gv
+
+" better navigation of wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+" easier increment/decrement
+nnoremap + <C-a>
+nnoremap - <C-x>
+
+" remove trailing spaces
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
+
+" easy split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" fast expand current file's directory in command mode
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+
+" === Global ===
+
 " be 'modern'
 set nocompatible
 syntax on
@@ -26,7 +94,6 @@ set ruler               " line and column number of the cursor position
 set wildmenu            " enhanced command completion
 set visualbell          " use visual bell instead of beeping
 set laststatus=2        " always show the status line
-"set listchars=tab:▷⋅,trail:·,eol:$
 set listchars=tab:▷⋅,trail:·
 set list
 
@@ -37,7 +104,6 @@ hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
                         " ignore these files when completing names and in
                         " explorer
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
-set shell=/bin/bash     " use bash for shell commands
 set autowriteall        " Automatically save before commands like :next and :make
 set hidden              " enable multiple modified buffers
 set history=1000
@@ -48,12 +114,7 @@ set completeopt=menuone,preview
 let bash_is_sh=1        " syntax shell files as bash scripts
 set cinoptions=:0,(s,u0,U1,g0,t0 " some indentation options ':h cinoptions' for details
 set modelines=5         " number of lines to check for vim: directives at the start/end of file
-"set fixdel                 " fix terminal code for delete (if delete is broken but backspace works)
 set autoindent          " automatically indent new line
-
-set ts=4                " number of spaces in a tab
-set sw=4                " number of spaces for indent
-set et                  " expand tabs into spaces
 
 set ttimeoutlen=50      " fast Esc to normal mode
 
@@ -90,8 +151,112 @@ set foldmethod=indent
 set foldlevel=9
 set nofoldenable        "dont fold by default "
 
-" extended '%' mapping for if/then/else/end etc
-runtime macros/matchit.vim
+" === Plugins ===
 
-let mapleader = ","
-let maplocalleader = "\\"
+" syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
+let g:syntastic_check_on_wq=0
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+
+" delimitMate
+let g:delimitMate_expand_space = 1 " Turns on/off the expansion of <Space>
+let g:delimitMate_expand_cr = 1    " Turns on/off the expansion of <CR>
+
+" nerdtree
+" Ctrl-P to Display the file browser tree
+nmap <C-P> :NERDTreeTabsToggle<CR>
+" ,p to show current file in the tree
+nmap <leader>p :NERDTreeFind<CR>
+
+" nerdcommenter
+" ,/ to invert comment on the current line/selection
+nmap <leader>/ :call NERDComment(0, "invert")<cr>
+vmap <leader>/ :call NERDComment(0, "invert")<cr>
+
+" ,t to show tags window
+let Tlist_Show_Menu=1
+nmap <leader>t :TlistToggle<CR>
+
+" yankring
+let g:yankring_replace_n_pkey = '<leader>['
+let g:yankring_replace_n_nkey = '<leader>]'
+" ,y to show the yankring
+nmap <leader>y :YRShow<cr>
+" put the yankring_history file in ~/.backup
+let g:yankring_history_dir = '~/.backup'
+
+" rails
+" completing Rails hangs a lot
+let g:rubycomplete_rails = 1
+
+let g:ctrlp_map = '<leader>,'
+let g:ctrlp_cmd = 'CtrlP'
+
+nmap <leader>. :CtrlPClearCache<cr>:CtrlP<cr>
+nmap <leader>l :CtrlPLine<cr>
+nmap <leader>b :CtrlPBuff<cr>
+nmap <leader>m :CtrlPBufTag<cr>
+nmap <leader>M :CtrlPBufTagAll<cr>
+
+let g:ctrlp_clear_cache_on_exit = 1
+" ctrlp leaves stale caches behind if there is another vim process runnin
+" which didn't use ctrlp. so we clear all caches on each new vim invocation
+cal ctrlp#clra()
+
+let g:ctrlp_max_height = 10
+
+" show on top
+let g:ctrlp_match_window_bottom = 1
+let g:ctrlp_match_window_reversed = 1
+
+" jump to buffer in the same tab if already open
+let g:ctrlp_switch_buffer = 1
+
+" if in git repo - use git file listing command, should be faster
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard -cod']
+
+" open multiple files with <c-z> to mark and <c-o> to open. v - opening in
+" vertical splits; j - jump to first open buffer; r - open first in current buffer
+let g:ctrlp_open_multiple_files = 'vjr'
+
+let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'mixed', 'line']
+
+" same in visual mode
+:vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
+
+" vim-indentobject
+" add Markdown to the list of indentation based languages
+let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
+
+" VimClojure
+let g:vimclojure#ParenRainbow = 1
+let g:vimclojure#DynamicHighlighting = 1
+
+" VimOrganizer
+au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
+au BufEnter *.org call org#SetOrgFileType()
+
+" Switch
+" making some of the switches defined for ruby work in HAML files
+autocmd FileType haml let b:switch_definitions =
+      \ [
+      \   g:switch_builtins.ruby_hash_style,
+      \   g:switch_builtins.ruby_string,
+      \   g:switch_builtins.true_false,
+      \   g:switch_builtins.true_false,
+      \ ]
+
+let g:blockle_mapping = '<Leader>B'
+
+let g:unite_source_history_yank_enable = 1
+let g:unite_enable_start_insert = 1
+let g:unite_source_file_mru_long_limit = 100
+let g:unite_source_directory_mru_long_limit = 100
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+" vim-airline
+let g:airline_powerline_fonts=1
+let g:airline_theme='light' " dark simple badwolf solarized solarized2
+set noshowmode

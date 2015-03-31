@@ -1,6 +1,7 @@
 " Leader
 let mapleader = ","
 
+set clipboard-=unnamed  " Allow to copy from vim to clipboard
 set backspace=2         " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
@@ -120,10 +121,10 @@ set splitbelow
 set splitright
 
 " Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-l> <C-w>l
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
