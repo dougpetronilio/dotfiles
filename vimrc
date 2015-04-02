@@ -108,9 +108,9 @@ nnoremap <leader><leader> <c-^>
 " vim-rspec mappings
 let g:rspec_command = "VtrSendCommand! rspec {spec}"
 
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>1 :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>2 :call RunNearestSpec()<CR>
+nnoremap <Leader>3 :call RunLastSpec()<CR>
 
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
