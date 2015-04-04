@@ -1,14 +1,13 @@
 " Leader
 let mapleader = ","
 
-set clipboard-=unnamed  " Allow to copy from vim to clipboard
 set backspace=2         " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
 set noswapfile          " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set history=50
 set ruler               " show the cursor position all the time
-set showcmd             " display incomplete commands
+"set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
 set laststatus=2        " Always display the status line
 set autowrite           " Automatically :write before running commands
@@ -101,9 +100,6 @@ let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
 " Index ctags from any project, including those outside Rails
 map <Leader>ct :!ctags -R .<CR>
-
-" Switch between the last two files
-nnoremap <leader><leader> <c-^>
 
 " vim-rspec mappings
 let g:rspec_command = "VtrSendCommand! rspec {spec}"

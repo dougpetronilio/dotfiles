@@ -81,12 +81,10 @@ set number              " precede each line with its line number
 set numberwidth=3       " number of culumns for line numbers
 set textwidth=0         " Do not wrap words (insert)
 set nowrap              " Do not wrap words (view)
-set showcmd             " Show (partial) command in status line.
 set showmatch           " Show matching brackets.
 set ruler               " line and column number of the cursor position
 set wildmenu            " enhanced command completion
 set visualbell          " use visual bell instead of beeping
-set laststatus=2        " always show the status line
 set listchars=tab:▷⋅,trail:·
 set list
 
@@ -99,7 +97,6 @@ hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
 set autowriteall        " Automatically save before commands like :next and :make
 set hidden              " enable multiple modified buffers
-set history=1000
 set autoread            " automatically read file that has been changed on disk and doesn't have changes in vim
 set backspace=indent,eol,start
 set guioptions-=T       " disable toolbar"
@@ -118,7 +115,6 @@ endif
 set mousehide                           " Hide mouse pointer on insert mode."
 
 " search settings
-set incsearch           " Incremental search
 set hlsearch            " Highlight search match
 set ignorecase          " Do case insensitive matching
 set smartcase           " do not ignore if search pattern has CAPS
@@ -130,11 +126,10 @@ let g:rubycomplete_classes_in_global = 1
 
 " directory settings
 call system('mkdir -vp ~/.backup/undo/ > /dev/null 2>&1')
-set backupdir=~/.backup,.       " list of directories for the backup file
-set directory=~/.backup,~/tmp,. " list of directory names for the swap file
-set nobackup            " do not write backup files
-set backupskip+=~/tmp/*,/private/tmp/* " skip backups on OSX temp dir, for crontab -e to properly work
-set noswapfile          " do not write .swp files
+set backupdir=~/.backup,.               " list of directories for the backup file
+set directory=~/.backup,~/tmp,.         " list of directory names for the swap file
+set nobackup                            " do not write backup files
+set backupskip+=~/tmp/*,/private/tmp/*  " skip backups on OSX temp dir, for crontab -e to properly work
 set undofile
 set undodir=~/.backup/undo/,~/tmp,.
 
@@ -252,6 +247,8 @@ let g:unite_source_directory_mru_long_limit = 100
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 " vim-airline
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
 let g:airline_theme='light' " dark simple badwolf solarized solarized2
 set noshowmode
+set clipboard=unnamed   " Allow to copy from vim to clipboard
