@@ -1,13 +1,14 @@
 " Leader
 let mapleader = ","
 
+set clipboard=unnamed   " Copy to clipboard from vim
 set backspace=2         " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
 set noswapfile          " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set history=50
 set ruler               " show the cursor position all the time
-"set showcmd             " display incomplete commands
+set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
 set laststatus=2        " Always display the status line
 set autowrite           " Automatically :write before running commands
@@ -119,8 +120,15 @@ set splitbelow
 set splitright
 
 " configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
+let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+
+let g:syntastic_enable_signs = 0
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+"let g:syntastic_error_symbol = '✗'
+"let g:syntastic_warning_symbol = '⚠'
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.

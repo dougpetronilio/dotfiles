@@ -24,18 +24,14 @@ Plugin 'bling/vim-airline'
 Plugin 'sjl/splice.vim'
 " automatic closing of quotes, parenthesis, brackets, etc.
 Plugin 'Raimondi/delimitMate'
-" calendar, duh!
-Plugin 'calendar.vim--Matsumoto'
 " A Narrow Region Plugin (similar to Emacs)
 Plugin 'chrisbra/NrrwRgn'
 " A clone of Emacs' Org-mode for Vim
-Plugin 'hsitz/VimOrganizer'
+"Plugin 'hsitz/VimOrganizer'
 " switch segments of text with predefined replacements. e.g. '' -> ""
 Plugin 'AndrewRadev/switch.vim'
 " git diff in the gutter (sign column) and stages/reverts hunks
 Plugin 'airblade/vim-gitgutter'
-" Grep
-Plugin 'mileszs/ack.vim'
 
 " Ruby/Rails
 
@@ -47,11 +43,6 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'ecomba/vim-ruby-refactoring'
 " toggle ruby blocks style
 Plugin 'vim-scripts/blockle.vim'
-
-" color themes
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-vividchalk'
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 " syntax support
 Plugin 'tsaleh/vim-tmux'
@@ -81,7 +72,7 @@ Plugin 'mattn/webapi-vim'
 Plugin 'Shougo/vimproc'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/unite-outline'
-Plugin 'ujihisa/unite-colorscheme'
+"Plugin 'ujihisa/unite-colorscheme'
 
 Plugin 'rizzatti/dash.vim'
 Plugin 'christoomey/vim-tmux-navigator'

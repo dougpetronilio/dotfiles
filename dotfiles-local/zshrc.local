@@ -15,7 +15,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/Users/thiagochiarato/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-alias vim="/Users/user/Applications/MacVim.app/Contents/MacOS/Vim"
+alias vim="/usr/local/Cellar/macvim/7.4-73_1/MacVim.app/Contents/MacOS/Vim"
 alias radio="cd ~/Development/alpha-coding/src/alpha-radio/"
 alias srv="script/server"
 alias ss="script/server_simple"

@@ -64,6 +64,7 @@ set nocompatible
 syntax on
 filetype plugin indent on
 
+
 " prevent vim from adding that stupid empty line at the end of every file
 set noeol
 set binary
@@ -140,13 +141,6 @@ set foldlevel=9
 set nofoldenable        "dont fold by default "
 
 " === Plugins ===
-
-" syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
-let g:syntastic_check_on_wq=0
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
 
 " delimitMate
 let g:delimitMate_expand_space = 1 " Turns on/off the expansion of <Space>
@@ -225,8 +219,8 @@ let g:vimclojure#ParenRainbow = 1
 let g:vimclojure#DynamicHighlighting = 1
 
 " VimOrganizer
-au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
-au BufEnter *.org call org#SetOrgFileType()
+"au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
+"au BufEnter *.org call org#SetOrgFileType()
 
 " Switch
 " making some of the switches defined for ruby work in HAML files
@@ -234,8 +228,7 @@ autocmd FileType haml let b:switch_definitions =
       \ [
       \   g:switch_builtins.ruby_hash_style,
       \   g:switch_builtins.ruby_string,
-      \   g:switch_builtins.true_false,
-      \   g:switch_builtins.true_false,
+      \   g:switch_builtins.true_false
       \ ]
 
 let g:blockle_mapping = '<Leader>B'
@@ -251,4 +244,20 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts=1
 let g:airline_theme='light' " dark simple badwolf solarized solarized2
 set noshowmode
-set clipboard=unnamed   " Allow to copy from vim to clipboard
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
