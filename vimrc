@@ -140,4 +140,4 @@ endif
 
 set background=dark
 syntax enable
-colorscheme Tomorrow-Night
+colorscheme railscasts
