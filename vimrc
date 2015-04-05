@@ -109,9 +109,6 @@ nnoremap <Leader>1 :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>2 :call RunNearestSpec()<CR>
 nnoremap <Leader>3 :call RunLastSpec()<CR>
 
-" Run commands that require an interactive shell
-"nnoremap <Leader>r :RunInInteractiveShell<space>
-
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
@@ -127,8 +124,6 @@ let g:syntastic_enable_signs = 0
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-"let g:syntastic_error_symbol = '✗'
-"let g:syntastic_warning_symbol = '⚠'
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
