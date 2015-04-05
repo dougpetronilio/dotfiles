@@ -110,7 +110,7 @@ nnoremap <Leader>2 :call RunNearestSpec()<CR>
 nnoremap <Leader>3 :call RunLastSpec()<CR>
 
 " Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<space>
+"nnoremap <Leader>r :RunInInteractiveShell<space>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'

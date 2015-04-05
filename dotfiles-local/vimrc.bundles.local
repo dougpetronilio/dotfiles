@@ -36,7 +36,7 @@ Plugin 'airblade/vim-gitgutter'
 " Ruby/Rails
 
 " rake integration
-Plugin 'tpope/vim-rake'
+"Plugin 'tpope/vim-rake'
 " A custom text object for selecting ruby blocks (ar/ir)
 Plugin 'nelstrom/vim-textobj-rubyblock'
 " ruby refactoring
@@ -51,27 +51,27 @@ Plugin 'JSON.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'vitaly/vim-syntastic-coffee'
 Plugin 'vim-scripts/jade.vim'
-Plugin 'wavded/vim-stylus'
+"Plugin 'wavded/vim-stylus'
 Plugin 'VimClojure'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'groenewege/vim-less'
+"Plugin 'ekalinin/Dockerfile.vim'
+"Plugin 'groenewege/vim-less'
 
 " Support and minor
 
 " Support for user-defined text objects
 Plugin 'kana/vim-textobj-user'
 " hide .gitignore-d files from vim
-Plugin 'vitaly/vim-gitignore'
+"Plugin 'vitaly/vim-gitignore'
 " repeat motion with <Space>
-Plugin 'scrooloose/vim-space'
+"Plugin 'scrooloose/vim-space'
 " Github's gist support
-Plugin 'mattn/gist-vim'
+"Plugin 'mattn/gist-vim'
 " web APIs support
-Plugin 'mattn/webapi-vim'
+"Plugin 'mattn/webapi-vim'
 
-Plugin 'Shougo/vimproc'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/unite-outline'
+"Plugin 'Shougo/vimproc'
+"Plugin 'Shougo/unite.vim'
+"Plugin 'Shougo/unite-outline'
 "Plugin 'ujihisa/unite-colorscheme'
 
 Plugin 'rizzatti/dash.vim'
