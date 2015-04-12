@@ -54,3 +54,4 @@ Plugin 'rizzatti/dash.vim'
 " Tmux support
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
+Plugin 'edkolev/tmuxline.vim'
