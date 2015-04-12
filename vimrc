@@ -9,9 +9,26 @@ set noswapfile          " http://robots.thoughtbot.com/post/18739402579/global-g
 set history=50
 set ruler               " show the cursor position all the time
 set showcmd             " display incomplete commands
-set incsearch           " do incremental searching
 set laststatus=2        " Always display the status line
 set autowrite           " Automatically :write before running commands
+set backspace=indent,eol,start
+set autoindent          " automatically indent new line
+set copyindent          " copy the previous indentation on autoindenting
+set showmatch           " Show matching brackets.
+set ignorecase          " Do case insensitive matching
+set hlsearch            " Highlight search match
+set incsearch           " do incremental searching
+set smartcase           " do not ignore if search pattern has CAPS
+set smarttab            " insert tabs on the start of a line according to
+                        "    shiftwidth, not tabstop
+set title               " change the terminal's title"
+set visualbell          " use visual bell instead of beeping
+set noerrorbells        " don't beep"
+set list
+set nowrap              " Do not wrap words (view)
+set wildmenu            " enhanced command completion
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
+
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -64,7 +81,6 @@ set expandtab
 set list listchars=tab:»·,trail:·,nbsp:·
 
 set tags=./tags;
-set grepprg=ack
 
 let g:fuzzy_ignore = "*.png;*.PNG;*.jpg;*.JPG;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 
@@ -79,28 +95,10 @@ nnoremap <leader>= :wincmd =<cr>
 
 " Numbers
 set number
-set numberwidth=5
-
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
+set numberwidth=3
 
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-
-" Index ctags from any project, including those outside Rails
-map <Leader>ct :!ctags -R .<CR>
 
 " vim-rspec mappings
 let g:rspec_command = "VtrSendCommand! rspec {spec}"
@@ -131,6 +129,13 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Always use vertical diffs
 set diffopt+=vertical
+
+" Reload .vimrc
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

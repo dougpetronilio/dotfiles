@@ -6,8 +6,6 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 " popup completion menu
 Plugin 'AutoComplPop'
-" tags list navigation
-Plugin 'taglist.vim'
 " yank history
 Plugin 'YankRing.vim'
 " TextMate-style snippets
@@ -52,5 +50,7 @@ Plugin 'VimClojure'
 " Support for user-defined text objects
 Plugin 'kana/vim-textobj-user'
 Plugin 'rizzatti/dash.vim'
+
+" Tmux support
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'

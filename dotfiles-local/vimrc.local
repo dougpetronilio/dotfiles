@@ -1,83 +1,19 @@
-" === Binding ===
-
-" toggle highlight trailing whitespace
-nmap <silent> <leader>s :set nolist!<CR>
-
-" Ctrol-E to switch between 2 last buffers
-nmap <C-E> :b#<CR>
-
 " ,e to fast finding files. just type beginning of a name and hit TAB
 nmap <leader>e :e **/
-
-" ,n to get the next location (compilation errors, grep etc)
-nmap <leader>n :cn<CR>
-nmap <leader>N :cp<CR>
-
-""""""""""" awesome stuff from vimbits.com
-
-" keep selection after in/outdent
-vnoremap < <gv
-vnoremap > >gv
-
-" remove trailing spaces
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
-
-" === Global ===
-
-" prevent vim from adding that stupid empty line at the end of every file
-set noeol
-set binary
-
-" utf-8/unicode support
-" requires Vim to be compiled with Multibyte support, you can check that by
-" running `vim --version` and checking for +multi_byte.
-if has('multi_byte')
-  scriptencoding utf-8
-  set encoding=utf-8
-end
-
-" presentation settings
-set textwidth=0         " Do not wrap words (insert)
-set nowrap              " Do not wrap words (view)
-set showmatch           " Show matching brackets.
-set wildmenu            " enhanced command completion
-set visualbell          " use visual bell instead of beeping
-set list
 
 " highlight spell errors
 hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
 
-" behavior
-                        " ignore these files when completing names and in
-                        " explorer
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
 set autowriteall        " Automatically save before commands like :next and :make
 set hidden              " enable multiple modified buffers
 set autoread            " automatically read file that has been changed on disk and doesn't have changes in vim
-set backspace=indent,eol,start
 set completeopt=menuone,preview
-set cinoptions=:0,(s,u0,U1,g0,t0 " some indentation options ':h cinoptions' for details
-set modelines=5         " number of lines to check for vim: directives at the start/end of file
-set autoindent          " automatically indent new line
-set ttimeoutlen=50      " fast Esc to normal mode
 
 " mouse settings
 if has("mouse")
   set mouse=a
 endif
 set mousehide                           " Hide mouse pointer on insert mode."
-
-" search settings
-set hlsearch            " Highlight search match
-set ignorecase          " Do case insensitive matching
-set smartcase           " do not ignore if search pattern has CAPS
-
-" omni completion settings
-set ofu=syntaxcomplete#Complete
-let g:rubycomplete_buffer_loading = 0
-let g:rubycomplete_classes_in_global = 1
-
-" === Plugins ===
 
 " delimitMate
 let g:delimitMate_expand_space = 1 " Turns on/off the expansion of <Space>
@@ -96,10 +32,6 @@ let g:NERDTreeMapJumpNextSibling = ''
 nmap <leader>/ :call NERDComment(0, "invert")<cr>
 vmap <leader>/ :call NERDComment(0, "invert")<cr>
 
-" ,t to show tags window
-let Tlist_Show_Menu=1
-nmap <leader>T :TlistToggle<CR>
-
 " yankring
 let g:yankring_replace_n_pkey = '<leader>['
 let g:yankring_replace_n_nkey = '<leader>]'
@@ -116,10 +48,6 @@ let g:ctrlp_map = '<leader>,'
 let g:ctrlp_cmd = 'CtrlP'
 
 nmap <leader>. :CtrlPClearCache<cr>:CtrlP<cr>
-nmap <leader>l :CtrlPLine<cr>
-nmap <leader>b :CtrlPBuff<cr>
-nmap <leader>m :CtrlPBufTag<cr>
-nmap <leader>M :CtrlPBufTagAll<cr>
 
 let g:ctrlp_clear_cache_on_exit = 1
 " ctrlp leaves stale caches behind if there is another vim process runnin
@@ -155,10 +83,6 @@ let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "
 let g:vimclojure#ParenRainbow = 1
 let g:vimclojure#DynamicHighlighting = 1
 
-" VimOrganizer
-au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
-au BufEnter *.org call org#SetOrgFileType()
-
 " Switch
 " making some of the switches defined for ruby work in HAML files
 autocmd FileType haml let b:switch_definitions =
@@ -170,21 +94,11 @@ autocmd FileType haml let b:switch_definitions =
 
 let g:blockle_mapping = '<Leader>B'
 
-let g:unite_source_history_yank_enable = 1
-let g:unite_enable_start_insert = 1
-let g:unite_source_file_mru_long_limit = 100
-let g:unite_source_directory_mru_long_limit = 100
-"call unite#filters#matcher_default#use(['matcher_fuzzy'])
-
 " vim-airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 let g:airline_theme='dark' " dark simple badwolf solarized solarized2
 set noshowmode
-
-" To open a new empty buffer
-" This replaces :tabnew which I used to bind to this mapping
-nmap <leader>T :enew<cr>
 
 " Move to the next buffer
 nmap <leader>l :bnext<CR>
@@ -195,6 +109,3 @@ nmap <leader>h :bprevious<CR>
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
 nmap <leader>bq :bp <BAR> bd #<CR>
-
-" Show all open buffers and their status
-nmap <leader>bl :ls<CR>
