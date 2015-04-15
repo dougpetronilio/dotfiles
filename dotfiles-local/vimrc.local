@@ -8,6 +8,7 @@ set autowriteall        " Automatically save before commands like :next and :mak
 set hidden              " enable multiple modified buffers
 set autoread            " automatically read file that has been changed on disk and doesn't have changes in vim
 set completeopt=menuone,preview
+set grepprg=ack
 
 " mouse settings
 if has("mouse")
