@@ -49,7 +49,6 @@ Plugin 'VimClojure'
 
 " Support for user-defined text objects
 Plugin 'kana/vim-textobj-user'
-Plugin 'rizzatti/dash.vim'
 
 " Tmux support
 Plugin 'christoomey/vim-tmux-navigator'

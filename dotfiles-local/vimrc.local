@@ -96,20 +96,10 @@ autocmd FileType haml let b:switch_definitions =
 let g:blockle_mapping = '<Leader>B'
 
 " vim-airline
-let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#enabled=0
 let g:airline_powerline_fonts=1
 let g:airline_theme='badwolf' " dark simple badwolf solarized solarized2
 set noshowmode
-
-" Move to the next buffer
-nmap <leader>l :bnext<CR>
-
-" Move to the previous buffer
-nmap <leader>h :bprevious<CR>
-
-" Close the current buffer and move to the previous one
-" This replicates the idea of closing a tab
-nmap <leader>bq :bp <BAR> bd #<CR>
 
 " extended '%' mapping for if/then/else/end etc
 runtime macros/matchit.vim
