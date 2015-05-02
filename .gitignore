@@ -1,2 +1,4 @@
 !bin
 vim/bundle/
+dotfiles-local/gitconfig.local
+dotfiles-local/zshrc.local

@@ -1,14 +1,21 @@
 # User configuration
-#export PATH="bin:/opt/boxen/heroku/bin:/opt/boxen/rbenv/shims:/opt/boxen/rbenv/bin:/opt/boxen/ruby-build/bin:/opt/boxen/phantomenv/shims:/opt/boxen/phantomenv/bin:node_modules/.bin:/opt/boxen/nodenv/shims:/opt/boxen/nodenv/bin:/opt/boxen/bin:/opt/boxen/homebrew/bin:/opt/boxen/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 export PATH="/Users/thiagochiarato/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-alias vim="/usr/local/Cellar/macvim/7.4-73_1/MacVim.app/Contents/MacOS/Vim"
 alias srv="script/server"
 alias ss="script/server_simple"
 alias rdstation="~/src/rdstation/"
 alias exporter="~/src/rdstation-gooddata-data-exporter/"
-alias good_data2.0="~/src/marketing-bi-gooddata/"
-alias vtt="mvim ."
 alias hprod="heroku run bundle exec rails c -a rdstation-cedar"
 
+source dnvm.sh
 #source /opt/boxen/env.sh
+
+code () {
+  if [[ $# = 0  ]]
+  then
+    open -a "Visual Studio Code"
+  else
+    [[ $1 = /*  ]] && F="$1" || F="$PWD/${1#./}"
+    open -a "Visual Studio Code" --args "$F"
+  fi
+}

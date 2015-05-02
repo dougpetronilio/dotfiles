@@ -103,3 +103,6 @@ set noshowmode
 
 " extended '%' mapping for if/then/else/end etc
 runtime macros/matchit.vim
+
+let g:OmniSharp_selector_ui = 'unite'  " Use unite.vim
+let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
