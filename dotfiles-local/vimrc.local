@@ -1,10 +1,10 @@
 " ,e to fast finding files. just type beginning of a name and hit TAB
-nmap <leader>e :e **/
+"nmap <leader>e :e **/
 
 " highlight spell errors
-hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
+"hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
 
-set autowriteall        " Automatically save before commands like :next and :make
+"set autowriteall        " Automatically save before commands like :next and :make
 set hidden              " enable multiple modified buffers
 set autoread            " automatically read file that has been changed on disk and doesn't have changes in vim
 set completeopt=menuone,preview
@@ -104,5 +104,5 @@ set noshowmode
 " extended '%' mapping for if/then/else/end etc
 runtime macros/matchit.vim
 
-let g:OmniSharp_selector_ui = 'unite'  " Use unite.vim
-let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
+"let g:OmniSharp_selector_ui = 'unite'  " Use unite.vim
+"let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim

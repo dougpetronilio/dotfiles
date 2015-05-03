@@ -19,13 +19,13 @@ Plugin 'greplace.vim'
 " better looking statusline
 Plugin 'bling/vim-airline'
 " plugin for resolving three-way merge conflicts
-Plugin 'sjl/splice.vim'
+"Plugin 'sjl/splice.vim'
 " automatic closing of quotes, parenthesis, brackets, etc.
 Plugin 'Raimondi/delimitMate'
 " A Narrow Region Plugin (similar to Emacs)
-Plugin 'chrisbra/NrrwRgn'
+"Plugin 'chrisbra/NrrwRgn'
 " switch segments of text with predefined replacements. e.g. '' -> ""
-Plugin 'AndrewRadev/switch.vim'
+"Plugin 'AndrewRadev/switch.vim'
 " git diff in the gutter (sign column) and stages/reverts hunks
 Plugin 'airblade/vim-gitgutter'
 
@@ -40,10 +40,9 @@ Plugin 'vim-scripts/blockle.vim'
 
 " syntax support
 Plugin 'tsaleh/vim-tmux'
-Plugin 'Puppet-Syntax-Highlighting'
 Plugin 'JSON.vim'
 Plugin 'tpope/vim-markdown'
-Plugin 'vitaly/vim-syntastic-coffee'
+"Plugin 'vitaly/vim-syntastic-coffee'
 Plugin 'vim-scripts/jade.vim'
 Plugin 'VimClojure'
 
@@ -56,6 +55,6 @@ Plugin 'christoomey/vim-tmux-runner'
 Plugin 'edkolev/tmuxline.vim'
 
 " .NET
-Plugin 'OmniSharp/omnisharp-vim'
-Plugin 'tpope/vim-dispatch'
-Plugin 'OrangeT/vim-csharp'
+"Plugin 'OmniSharp/omnisharp-vim'
+"Plugin 'tpope/vim-dispatch'
+"Plugin 'OrangeT/vim-csharp'
