@@ -1,6 +1,10 @@
 " Leader
 let mapleader = ","
 
+set hidden              " enable multiple modified buffers
+set autoread            " automatically read file that has been changed on disk and doesn't have changes in vim
+set completeopt=menuone,preview
+set grepprg=ack
 set clipboard=unnamed   " Copy to clipboard from vim
 set backspace=2         " Backspace deletes like most programs in insert mode
 set nobackup
@@ -21,7 +25,6 @@ set incsearch           " do incremental searching
 set smartcase           " do not ignore if search pattern has CAPS
 set smarttab            " insert tabs on the start of a line according to
                         "    shiftwidth, not tabstop
-set title               " change the terminal's title"
 set visualbell          " use visual bell instead of beeping
 set noerrorbells        " don't beep"
 set list
@@ -91,10 +94,6 @@ set tags=./tags;
 
 let g:fuzzy_ignore = "*.png;*.PNG;*.jpg;*.JPG;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 
-" Search for the word under the cursor
-" Normal mode: K
-nmap K :Gsearch "\b<C-R><C-W>\b"<CR>
-
 " Resize and Zoom
 autocmd VimResized * :wincmd =
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
@@ -103,9 +102,6 @@ nnoremap <leader>= :wincmd =<cr>
 " Numbers
 set number
 set numberwidth=3
-
-" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
 " vim-rspec mappings
 let g:rspec_command = "VtrSendCommand! rspec {spec}"
@@ -121,31 +117,11 @@ let g:html_indent_tags = 'li\|p'
 set splitbelow
 set splitright
 
-" configure syntastic syntax checking to check on open as well as save
-"let g:syntastic_ruby_checkers = ['rubocop']
-"let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-
-"let g:syntastic_enable_signs = 0
-"let g:syntastic_auto_loc_list = 2
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
-" Set spellfile to location that is guaranteed to exist, can be symlinked to
-" Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
-"set spellfile=$HOME/.vim-spell-en.utf-8.add
-
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
 
 " Always use vertical diffs
 set diffopt+=vertical
-
-" Reload .vimrc
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-" Use Q for formatting the current paragraph (or selection)
-vmap Q gq
-nmap Q gqap
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
