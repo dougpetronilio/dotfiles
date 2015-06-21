@@ -5,6 +5,9 @@ if has("mouse")
 endif
 set mousehide            " Hide mouse pointer on insert mode."
 
+" gp to select last paste block
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
 " delimitMate
 let g:delimitMate_expand_space = 1 " Turns on/off the expansion of <Space>
 let g:delimitMate_expand_cr = 1    " Turns on/off the expansion of <CR>
