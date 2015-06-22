@@ -1,9 +1,9 @@
 [init]
   templatedir = ~/.git_template
 [color]
-  ui = auto
+  ui = true
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = /opt/boxen/config/git/gitignore
   autocrlf = input
 [commit]
   template = ~/.gitmessage
@@ -11,3 +11,9 @@
   prune = true
 [include]
   path = ~/.gitconfig.local
+
+[hub]
+protocol = https
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
