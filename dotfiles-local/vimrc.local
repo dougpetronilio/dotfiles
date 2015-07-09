@@ -1,4 +1,3 @@
-
 " mouse settings
 if has("mouse")
   set mouse=a
@@ -66,8 +65,8 @@ let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'mixed', 'line']
 let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
 
 " vim-airline
-let g:airline#extensions#tabline#enabled=0
-let g:airline_powerline_fonts=1
+"let g:airline#extensions#tabline#enabled=0
+"let g:airline_powerline_fonts=1
 let g:airline_theme='badwolf' " dark simple badwolf solarized solarized2
 set noshowmode
 

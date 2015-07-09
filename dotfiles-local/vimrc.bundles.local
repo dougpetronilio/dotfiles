@@ -37,6 +37,7 @@ Plugin 'tsaleh/vim-tmux'
 Plugin 'JSON.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'vim-scripts/jade.vim'
+Plugin 'elixir-lang/vim-elixir'
 
 " Support for user-defined text objects
 Plugin 'kana/vim-textobj-user'
