@@ -127,7 +127,6 @@ nmap <leader>v :vsplit<CR>
 nmap <leader>h :split<CR>
 nmap <leader>q :q<CR>
 
-nmap <C-T> :tabnew
 nmap <C-W> :tabclose<CR>
 nmap <C-right> :tabnext<CR>
 nmap <C-left> :tabprevious<CR>
