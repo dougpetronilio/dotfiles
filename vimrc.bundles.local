@@ -1,3 +1,5 @@
+" railscasts theme
+Plugin 'jpo/vim-railscasts-theme'
 " file tree
 Plugin 'scrooloose/nerdtree'
 " file tree and tabs interaction
@@ -10,18 +12,12 @@ Plugin 'AutoComplPop'
 Plugin 'YankRing.vim'
 " TextMate-style snippets
 Plugin 'msanders/snipmate.vim'
-" vertical alignment tool
-Plugin 'tsaleh/vim-align'
-" text object based on indent level (ai, ii)
-Plugin 'austintaylor/vim-indentobject'
 " global search & replace
 Plugin 'greplace.vim'
 " better looking statusline
 Plugin 'bling/vim-airline'
 " automatic closing of quotes, parenthesis, brackets, etc.
 Plugin 'Raimondi/delimitMate'
-" git diff in the gutter (sign column) and stages/reverts hunks
-Plugin 'airblade/vim-gitgutter'
 
 " Ruby/Rails
 
@@ -45,4 +41,3 @@ Plugin 'kana/vim-textobj-user'
 " Tmux support
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
-"Plugin 'edkolev/tmuxline.vim'
