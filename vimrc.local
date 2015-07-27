@@ -107,9 +107,10 @@ set noshowmode
 
 map <leader>r :Eroutes<CR>
 map <leader>s :Eschema<CR>
-map <leader>m :Emodel
-map <leader>v :Eview
-map <leader>c :Econtroller
+map <leader>m :Emodel 
+map <leader>v :Eview 
+map <leader>c :Econtroller 
+map <leader>j :Ejob 
 
 " Duplicate a selection
 " Visual mode: D
