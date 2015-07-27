@@ -124,8 +124,8 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 command! Eroutes :e config/routes.rb
 command! Eschema :e db/schema.rb
 
-nmap <leader>v :vsplit<CR>
-nmap <leader>h :split<CR>
+nmap <leader>V :vsplit<CR>
+nmap <leader>H :split<CR>
 nmap <leader>q :q<CR>
 
 nmap <C-W> :tabclose<CR>
