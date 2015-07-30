@@ -105,12 +105,13 @@ let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "
 let g:airline_theme='badwolf' " dark simple badwolf solarized solarized2
 set noshowmode
 
-map <leader>r :Eroutes<CR>
-map <leader>s :Eschema<CR>
+map <leader>R :Eroutes<CR>
+map <leader>S :Eschema<CR>
 map <leader>m :Emodel 
 map <leader>v :Eview 
 map <leader>c :Econtroller 
 map <leader>j :Ejob 
+map <leader>s :Espec 
 
 " Duplicate a selection
 " Visual mode: D
