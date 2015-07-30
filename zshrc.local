@@ -1,1 +1,4 @@
 alias rdstation="~/src/rdstation"
+alias srv="script/server"
+alias vtt="vim ."
+alias vt="vim"
