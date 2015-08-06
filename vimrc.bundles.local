@@ -41,3 +41,9 @@ Plugin 'kana/vim-textobj-user'
 " Tmux support
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-runner'
+
+" Golang
+Plugin 'fatih/vim-go'
+
+" Gliphy Icons
+Plugin 'ryanoasis/vim-webdevicons'
