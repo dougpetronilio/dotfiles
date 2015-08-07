@@ -32,8 +32,6 @@ vnoremap > >gv
 " remove trailing spaces
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
 
-" set tags=./tags;
-
 let g:fuzzy_ignore = "*.png;*.PNG;*.jpg;*.JPG;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 
 " vim-rspec mappings
@@ -108,13 +106,14 @@ set noshowmode
 " Gliphy Icons
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 
-map <leader>R :Eroutes<CR>
-map <leader>S :Eschema<CR>
-map <leader>m :Emodel 
-map <leader>v :Eview 
-map <leader>c :Econtroller 
-map <leader>j :Ejob 
-map <leader>s :Espec 
+nnoremap <leader>R :Eroutes<CR>
+nnoremap <leader>S :Eschema<CR>
+nnoremap <leader>m :Emodel 
+nnoremap <leader>v :Eview 
+nnoremap <leader>c :Econtroller 
+nnoremap <leader>j :Ejob 
+nnoremap <leader>s :Espec 
+nnoremap <leader>f :Gsearch 
 
 " Duplicate a selection
 " Visual mode: D
@@ -122,19 +121,18 @@ vmap D y'>p
 
 " Opens a tab edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Edit routes
 command! Eroutes :e config/routes.rb
 command! Eschema :e db/schema.rb
 
-nmap <leader>V :vsplit<CR>
-nmap <leader>H :split<CR>
-nmap <leader>q :q<CR>
+nnoremap <leader>V :vsplit<CR>
+nnoremap <leader>H :split<CR>
+nnoremap <leader>q :q<CR>
 
-nmap <C-W> :tabclose<CR>
-nmap <C-right> :tabnext<CR>
-nmap <C-left> :tabprevious<CR>
+nnoremap <C-right> :tabnext<CR>
+nnoremap <C-left> :tabprevious<CR>
 
 syntax enable
 colorscheme railscasts
