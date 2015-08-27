@@ -4,6 +4,7 @@
   ui = true
 [core]
   excludesfile = /opt/boxen/config/git/gitignore
+  attributesfile = ~/.gitattributes
   autocrlf = input
 [commit]
   template = ~/.gitmessage
@@ -11,9 +12,7 @@
   prune = true
 [include]
   path = ~/.gitconfig.local
-
 [hub]
-protocol = https
-
+  protocol = https
 [credential]
-helper = /opt/boxen/bin/boxen-git-credential
+  helper = /opt/boxen/bin/boxen-git-credential
