@@ -131,8 +131,8 @@ nnoremap <leader>V :vsplit<CR>
 nnoremap <leader>H :split<CR>
 nnoremap <leader>q :q<CR>
 
-nnoremap <C-right> :tabnext<CR>
-nnoremap <C-left> :tabprevious<CR>
+"nnoremap <C-right> :tabnext<CR>
+"nnoremap <C-left> :tabprevious<CR>
 
 syntax enable
 colorscheme railscasts

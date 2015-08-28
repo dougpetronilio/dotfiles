@@ -111,9 +111,9 @@ map <Leader>ct :!ctags -R .<CR>
 nnoremap <leader><leader> <c-^>
 
 " vim-rspec mappings
-nnoremap <Leader>f :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>t :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>1 :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>2 :call RunNearestSpec()<CR>
+nnoremap <Leader>3 :call RunLastSpec()<CR>
 
 " Run commands that require an interactive shell
 nnoremap <Leader>i :RunInInteractiveShell<space>
