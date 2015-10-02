@@ -135,4 +135,12 @@ nnoremap <leader>q :q<CR>
 "nnoremap <C-left> :tabprevious<CR>
 
 syntax enable
-colorscheme railscasts
+colorscheme gruvbox 
+set background=dark
+
+
+set mouse+=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
