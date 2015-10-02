@@ -23,3 +23,6 @@ bind -n C-Up resize-pane -U 5
 bind c new-window -c '#{pane_current_path}'
 
 bind-key c-j choose-tree
+
+set -g mode-mouse on
+set -g mouse-resize-pane on
