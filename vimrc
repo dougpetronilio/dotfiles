@@ -147,6 +147,13 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
+" set mouse at tmux confs
+set mouse+=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
