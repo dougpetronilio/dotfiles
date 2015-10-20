@@ -101,10 +101,12 @@ let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "
 
 " vim-airline
 let g:airline_theme='badwolf' " dark simple badwolf solarized solarized2
+let g:airline_powerline_fonts = 1
 set noshowmode
 
 " Gliphy Icons
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:webdevicons_conceal_nerdtree_brackets = 0
 
 nnoremap <leader>R :Eroutes<CR>
 nnoremap <leader>S :Eschema<CR>
