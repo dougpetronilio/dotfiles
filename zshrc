@@ -17,3 +17,5 @@ source $ZSH/oh-my-zsh.sh
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+eval "$(rbenv init -)"

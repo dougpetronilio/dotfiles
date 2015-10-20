@@ -2,3 +2,6 @@ alias rdstation="~/src/rdstation"
 alias srv="script/server"
 alias vtt="vim ."
 alias vt="vim"
+alias rdstop="brew services stop elasticsearch14; brew services stop memcached; brew services stop mongodb; brew services stop postgresql; brew services stop redis"
+alias rdstart="brew services start elasticsearch14; brew services start memcached; brew services start mongodb; brew services start postgresql; brew services start redis"
+export EXECJS_RUNTIME='Node'
