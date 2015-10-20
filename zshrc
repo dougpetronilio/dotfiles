@@ -15,5 +15,7 @@ bindkey '^[[1;9D' backward-word
 
 source $ZSH/oh-my-zsh.sh
 
+eval "$(rbenv init -)"
+
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
