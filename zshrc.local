@@ -4,3 +4,4 @@ alias vtt="vim ."
 alias vt="vim"
 
 #export PATH="$HOME/.rbenv/shims:$PATH"
+alias hprod="heroku run rails c -a rdstation-cedar"
