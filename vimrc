@@ -158,3 +158,6 @@ endif
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+let g:netrw_liststyle=4
+let NERDTreeShowBookmarks=1

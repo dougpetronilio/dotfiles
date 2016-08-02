@@ -47,3 +47,5 @@ Plugin 'fatih/vim-go'
 
 " Gliphy Icons
 Plugin 'ryanoasis/vim-webdevicons'
+
+Plugin 'neomake/neomake'

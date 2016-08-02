@@ -21,3 +21,4 @@ eval "$(rbenv init -)"
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 eval "$(rbenv init -)"
+eval "$(thefuck --alias)"
