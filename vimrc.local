@@ -100,6 +100,7 @@ let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'mixed', 'line']
 let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
 
 " vim-airline
+"let g:airline_theme='moriarty' " dark simple badwolf solarized solarized2
 let g:airline_theme='badwolf' " dark simple badwolf solarized solarized2
 let g:airline_powerline_fonts = 1
 set noshowmode
