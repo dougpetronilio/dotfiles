@@ -161,3 +161,4 @@ endif
 
 let g:netrw_liststyle=4
 let NERDTreeShowBookmarks=1
+Plugin 'wakatime/vim-wakatime'

@@ -142,6 +142,12 @@ nnoremap <leader>q :q<CR>
 "nnoremap <C-left> :tabprevious<CR>
 
 syntax enable
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme duoduo
 set background=dark
+set colorcolumn=100
+set clipboard=unnamedplus
 
+" fzf maps
+map <leader>pb :Buffers<cr>
+map <leader>l :GFiles<cr>
