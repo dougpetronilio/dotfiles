@@ -134,7 +134,7 @@ nnoremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 command! Eroutes :e config/routes.rb
 command! Eschema :e db/schema.rb
 
-nnoremap <leader>V :vsplit<CR>
+nnoremap <leader>V :vsplit<CR>https://shapeshed.com/vim-statuslines/
 nnoremap <leader>H :split<CR>
 nnoremap <leader>q :q<CR>
 
@@ -142,8 +142,20 @@ nnoremap <leader>q :q<CR>
 "nnoremap <C-left> :tabprevious<CR>
 
 syntax enable
+if has('vim_starting')
+  set nocompatible
+  set termguicolors
+endif
 "colorscheme gruvbox
-colorscheme duoduo
+"colorscheme duoduo
+
+set t_Co=256
+"colorscheme dracula
+colorscheme brighton
+"colorscheme atomified
+"colorscheme ceudah
+"colorscheme charon
+filetype indent plugin on
 set background=dark
 set colorcolumn=100
 set clipboard=unnamedplus
@@ -151,3 +163,9 @@ set clipboard=unnamedplus
 " fzf maps
 map <leader>pb :Buffers<cr>
 map <leader>l :GFiles<cr>
+command! -nargs=+ -complete=shellcmd RunCommandOnTerminal belowright 10split term://<args>
+nnoremap <Leader>rt :RunCommandOnTerminal rd-docker exec web bundle exec rspec %<CR>
+
+"if $COLORTERM == 'gnome-terminal'
+  "set t_Co=256
+"endif

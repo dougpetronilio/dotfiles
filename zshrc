@@ -56,3 +56,7 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='226'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+export JFROG_USERNAME=douglas.petronilio
+export JFROG_PASSWORD=AKCp5bAioX6kAarbtYGb9vgq4etiMpiom2nT2tHF46pzkV28VkzoBTVTfUDLEucfeYXnLBR8f
+
