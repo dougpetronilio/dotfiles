@@ -13,5 +13,5 @@ alias hprod="heroku run rails c -a rdstation-cedar"
 export GOPATH=$HOME/src/go
 export PATH="$PATH:/path/to/elixir/bin"
 
-source ~/.rvm/scripts/rvm
+source /usr/share/rvm/scripts/rvm
 export THOR_MERGE=/home/douglaspetronilio/merge_tool_rails_generator
